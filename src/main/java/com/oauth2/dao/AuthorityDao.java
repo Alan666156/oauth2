@@ -1,4 +1,4 @@
-package com.oauth2.jpa;
+package com.oauth2.dao;
 
 
 import com.oauth2.entity.Authority;

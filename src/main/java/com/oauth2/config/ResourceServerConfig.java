@@ -24,6 +24,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
+        http
+                .httpBasic().and()
+                .csrf().disable();
 
         http
                 .exceptionHandling()
@@ -35,7 +38,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/hello/").permitAll()
-                .antMatchers("/secure/**").authenticated();
+                //必须认证过后才可以访问
+                .antMatchers("/auth/**").authenticated();
 
     }
 

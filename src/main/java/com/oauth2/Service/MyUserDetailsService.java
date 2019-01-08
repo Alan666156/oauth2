@@ -2,7 +2,7 @@ package com.oauth2.Service;
 
 import com.oauth2.entity.Authority;
 import com.oauth2.entity.User;
-import com.oauth2.jpa.UserDao;
+import com.oauth2.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- *
+ * security用户验证
  * @author fuhx
  */
 @Service
 @Transactional
-public class MyUserDetailsService  extends User implements UserDetailsService {
+public class MyUserDetailsService extends User implements UserDetailsService {
     @Autowired
     private UserDao userDao;
 

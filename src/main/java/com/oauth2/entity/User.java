@@ -2,10 +2,7 @@ package com.oauth2.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Set;
 
 @Entity
@@ -23,7 +20,9 @@ public class User  extends AbstractEntity{
     private String activationKey;
 
     private String resetPasswordKey;
-
+    /**
+     * JoinTable 维护和生成中间表
+     */
     @ManyToMany
     @JoinTable(
             name = "user_authority",
